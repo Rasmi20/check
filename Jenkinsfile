@@ -1,13 +1,6 @@
-pipeline {
-  agent any
-  stages {
-    stage('build') {
-      steps {
-        script{
-          def datas = readYaml file: 'release.yml'
-          echo "${datas}"
-       }
-      }
-    }
-  }
+node('Node03'){
+  datas = readYaml file: 'release.yml'
+  stage('yaml checking'){
+   echo ${datas}
+}
 }
